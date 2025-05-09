@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PMS.Core.CategoryFeatures
+{
+    public class CategoryEntity
+    {
+        public CategoryEntity(string Name, string Description, string ImageUrl)
+        {
+            Guid = Guid.NewGuid();
+            this.Name = Name;
+            this.Description = Description;
+            this.ImageUrl = ImageUrl;
+        }
+
+        public int Id { get; protected set; }
+        public Guid Guid { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string ImageUrl { get; set; }
+    }
+}
