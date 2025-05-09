@@ -11,11 +11,10 @@ namespace PMS.Core.OderFeatures
 {
     public class OrderEntity
     {
-        public OrderEntity(string Name, string Description, int OrderItemId, int CustomerId, string OrderStatus, string DelieveryAddress)
+        public OrderEntity(string Name, string Description,int CustomerId, string OrderStatus, string DelieveryAddress)
         {
             Guid = Guid.NewGuid();
             this.Description = Description;
-            this.OrderItemId = OrderItemId;
             this.CustomerId = CustomerId;
             this.OrderStatus = OrderStatusEnum.Pending;
             this.DelieveryAddress = DelieveryAddress;
@@ -24,8 +23,7 @@ namespace PMS.Core.OderFeatures
         public int Id { get; protected set; }
         public Guid Guid { get; set; }
         public string Description { get; set; }
-        public int OrderItemId { get; set; }
-        public OrderItemEntity OrderItemEntity { get; set; }
+        public ICollection<OrderItemEntity> OrderItems { get; set; } = new List<OrderItemEntity>();
         public int CustomerId { get; set; }
         public CustomerEntity CustomerEntity { get; set; }
 
@@ -33,6 +31,7 @@ namespace PMS.Core.OderFeatures
         public TimeOnly CreatedTime { get; set; }
         public string OrderStatus { get; set; }
         public string DelieveryAddress  { get; set; }
+        public decimal FinalPrice => OrderItems.Sum(item => item.TotalPrice);
 
         public void OrderPending()
         {
