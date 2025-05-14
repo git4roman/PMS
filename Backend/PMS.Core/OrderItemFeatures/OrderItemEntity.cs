@@ -22,6 +22,13 @@ namespace PMS.Core.OrderItemFeatures
             this.ShippingCharge = ShippingCharge;
             TotalPrice = (UnitPrice * Quantity) + ShippingCharge;
             this.OrderId = OrderId;
+            CreatedDate = DateOnly.FromDateTime(new DateTime());
+            CreatedTime = TimeOnly.FromDateTime(new DateTime());
+        }
+
+        public OrderItemEntity(int Id,string Name, string Description, int Quantity, decimal UnitPrice, decimal TotalPrice, int ProductId, decimal ShippingCharge, int OrderId): this(Name,Description, Quantity, UnitPrice, TotalPrice, ProductId, ShippingCharge,OrderId)
+        {
+            this.Id = Id;
         }
 
         public int Id { get; protected set; }
@@ -32,6 +39,9 @@ namespace PMS.Core.OrderItemFeatures
         public decimal UnitPrice { get; set; }
         public decimal ShippingCharge { get; set; }
         public decimal TotalPrice { get; set; }
+
+        public DateOnly CreatedDate { get; set; }
+        public TimeOnly CreatedTime { get; set; }
 
         public int ProductId { get; set; }
         public ProductEntity Product { get; set; }

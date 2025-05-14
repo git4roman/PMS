@@ -1,12 +1,35 @@
+using Microsoft.EntityFrameworkCore;
+using PMS.Core;
+using PMS.Core.CategoryFeatures;
+using PMS.DataAccess.Data;
+using PMS.DataAccess.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<AppDbContext>(options => options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
+
+builder.Services.AddScoped<IUow, Uow>();
+builder.Services.AddScoped<ICategoryRepo, CategoryRepo>();
 
 var app = builder.Build();
-// next changes
+app.UseCors("AllowAll");
 
-// Configure the HTTP request pipeline.
+
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");

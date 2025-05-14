@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 
-namespace PMS.DataAccess.Configurations
+namespace PMS.Core
 {
-    public class ProductConfiguration 
+    public class DommyTable
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

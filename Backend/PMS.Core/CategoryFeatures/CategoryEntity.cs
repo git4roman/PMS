@@ -16,6 +16,12 @@ namespace PMS.Core.CategoryFeatures
             this.ImageUrl = ImageUrl;
         }
 
+        public CategoryEntity(int Id, string Name, string Description, string ImageUrl):this(Name,Description,ImageUrl)
+        {
+            this.Id = Id;
+            
+        }
+
         public int Id { get; protected set; }
         public Guid Guid { get; set; }
         public string Name { get; set; }

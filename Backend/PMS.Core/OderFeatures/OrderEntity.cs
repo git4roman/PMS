@@ -11,13 +11,20 @@ namespace PMS.Core.OderFeatures
 {
     public class OrderEntity
     {
-        public OrderEntity(string Name, string Description,int CustomerId, string OrderStatus, string DelieveryAddress)
+        public OrderEntity(string Description,int CustomerId, string DelieveryAddress)
         {
             Guid = Guid.NewGuid();
             this.Description = Description;
             this.CustomerId = CustomerId;
-            this.OrderStatus = OrderStatusEnum.Pending;
+            OrderStatus = OrderStatusEnum.Pending;
             this.DelieveryAddress = DelieveryAddress;
+            CreatedDate = DateOnly.FromDateTime(DateTime.Now);
+            CreatedTime = TimeOnly.FromDateTime(DateTime.Now);
+        }
+
+        public OrderEntity(int Id, string Description, int CustomerId, string OrderStatus, string DelieveryAddress):this(Description, CustomerId, DelieveryAddress)
+        {
+            this.Id = Id;
         }
 
         public int Id { get; protected set; }

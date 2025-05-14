@@ -23,9 +23,14 @@ namespace PMS.Core.UserFeatures
             this.Address = Address;
             CreatedDate = DateOnly.FromDateTime(DateTime.Now);
             CreatedTime = TimeOnly.FromDateTime(DateTime.Now);
-            Status = UserStatusEnum.Active;
+            Status = UserStatusEnum.InActive;
         }
-        public int Id { get; set; }
+
+        public UserEntity(int Id,string FirstName, string MiddleName, string LastName, string PasswordHash, string Email, string PhoneNumber, string Address):this(FirstName,MiddleName,LastName,PasswordHash,Email,PhoneNumber,Address)
+        {
+            this.Id = Id;
+        }
+        public int Id { get; protected set; }
         public string FirstName { get; set; }
         public string? MiddleName { get; set; }
         public string LastName { get; set; }
