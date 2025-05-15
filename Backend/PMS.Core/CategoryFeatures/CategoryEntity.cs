@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PMS.Core.ProductFeatures;
 
 namespace PMS.Core.CategoryFeatures
 {
     public class CategoryEntity
     {
+        protected CategoryEntity() { }
         public CategoryEntity(string Name, string Description, string ImageUrl)
         {
             Guid = Guid.NewGuid();
@@ -27,5 +29,6 @@ namespace PMS.Core.CategoryFeatures
         public string Name { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
+        public IEnumerable<ProductEntity> Products { get; set; } = new List<ProductEntity>();
     }
 }

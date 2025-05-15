@@ -24,6 +24,7 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddScoped<IUow, Uow>();
 builder.Services.AddScoped<ICategoryRepo, CategoryRepo>();
+builder.Services.AddScoped<CategoryService>();
 
 var app = builder.Build();
 app.UseCors("AllowAll");

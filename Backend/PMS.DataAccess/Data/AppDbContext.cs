@@ -12,6 +12,7 @@ using PMS.Core.OrderItemFeatures;
 using PMS.Core.ProductFeatures;
 using PMS.Core.SellerFeatures;
 using PMS.Core.UserFeatures;
+using PMS.DataAccess.Configurations;
 using PMS.DataAccess.Seeder;
 
 namespace PMS.DataAccess.Data
@@ -34,6 +35,8 @@ namespace PMS.DataAccess.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
             new AppSeeder(modelBuilder);
         }
 

@@ -23,33 +23,43 @@ namespace PMS.DataAccess.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("category_id");
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(500)
+                        .HasColumnType("varchar(500)")
+                        .HasColumnName("description");
 
                     b.Property<Guid>("Guid")
-                        .HasColumnType("char(36)");
+                        .HasColumnType("char(36)")
+                        .HasColumnName("guid");
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)")
+                        .HasColumnName("image_url");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("category_name");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.HasIndex("Name");
+
+                    b.ToTable("categories", (string)null);
 
                     b.HasData(
                         new
                         {
                             Id = 1,
                             Description = "Seeds and plants for agriculture and gardening.",
-                            Guid = new Guid("a584297a-0a3b-4a60-962d-ed8c179d54a2"),
+                            Guid = new Guid("e1168fb4-6a6e-4fe8-9b0e-65282fbfb341"),
                             ImageUrl = "images/categories/crops.jpg",
                             Name = "Crops"
                         },
@@ -57,7 +67,7 @@ namespace PMS.DataAccess.Migrations
                         {
                             Id = 2,
                             Description = "Essential tools for planting, digging, and maintaining your garden.",
-                            Guid = new Guid("f1cdfa86-fdda-4b00-a594-ca9f92686b6c"),
+                            Guid = new Guid("a4f255b0-2315-4dee-b4b8-4dacf86457fe"),
                             ImageUrl = "images/categories/tools.jpg",
                             Name = "Tools"
                         },
@@ -65,7 +75,7 @@ namespace PMS.DataAccess.Migrations
                         {
                             Id = 3,
                             Description = "Fertilizers, pesticides, and insecticides for healthy plant growth.",
-                            Guid = new Guid("97c98309-57c7-48c3-b1a2-384d129dc468"),
+                            Guid = new Guid("af7963ee-4124-4e93-b85e-b42b97750ded"),
                             ImageUrl = "images/categories/chemicals.jpg",
                             Name = "Chemicals"
                         });
@@ -155,56 +165,56 @@ namespace PMS.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9935)),
+                            CreatedDate = new DateOnly(2025, 5, 15),
+                            CreatedTime = new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9178)),
                             CustomerId = 101,
                             DelieveryAddress = "123 Maple Street, Springfield",
                             Description = "Grocery order for weekly supplies",
-                            Guid = new Guid("e8285d33-3381-4595-8966-209995bf54a5"),
+                            Guid = new Guid("fb3eb877-677b-43ae-b047-dc70731036d8"),
                             OrderStatus = "Pending"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9937)),
+                            CreatedDate = new DateOnly(2025, 5, 15),
+                            CreatedTime = new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9181)),
                             CustomerId = 102,
                             DelieveryAddress = "456 Oak Avenue, Rivertown",
                             Description = "Electronics purchase",
-                            Guid = new Guid("ff7cf481-0c3e-44ce-b866-2d63590996c1"),
+                            Guid = new Guid("49e0eea5-e1ed-4d37-aa9c-77e8fd783f1f"),
                             OrderStatus = "Pending"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9939)),
+                            CreatedDate = new DateOnly(2025, 5, 15),
+                            CreatedTime = new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9183)),
                             CustomerId = 103,
                             DelieveryAddress = "789 Pine Road, Hillview",
                             Description = "Clothing order for summer collection",
-                            Guid = new Guid("9392d4e7-d233-48fd-8b62-cc2fb6101831"),
+                            Guid = new Guid("229a5c6b-f928-4a4d-ae51-289901553959"),
                             OrderStatus = "Pending"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9943)),
+                            CreatedDate = new DateOnly(2025, 5, 15),
+                            CreatedTime = new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9188)),
                             CustomerId = 104,
                             DelieveryAddress = "321 Cedar Lane, Lakeside",
                             Description = "Furniture delivery",
-                            Guid = new Guid("dff31598-417f-4290-939f-883adc04f6a4"),
+                            Guid = new Guid("7bef04f2-634f-4627-9600-5dc118bdb03f"),
                             OrderStatus = "Pending"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9975)),
+                            CreatedDate = new DateOnly(2025, 5, 15),
+                            CreatedTime = new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9190)),
                             CustomerId = 105,
                             DelieveryAddress = "654 Birch Street, Sunnyvale",
                             Description = "Cancelled book order",
-                            Guid = new Guid("c60d4e68-68a4-435a-b6b4-ac60bd348a07"),
+                            Guid = new Guid("3494126d-cd38-4a8a-83b7-17b35d013f1c"),
                             OrderStatus = "Pending"
                         });
                 });
@@ -265,7 +275,7 @@ namespace PMS.DataAccess.Migrations
                             CreatedDate = new DateOnly(1, 1, 1),
                             CreatedTime = new TimeOnly(0, 0, 0),
                             Description = "Two packets of tomato seeds",
-                            Guid = new Guid("d1be8d42-c2ad-4382-8513-a9fc0dac8bb6"),
+                            Guid = new Guid("7b65c3a9-565d-4dd2-8439-9bb656720f8a"),
                             Name = "Tomato Seeds x2",
                             OrderId = 1,
                             ProductId = 1,
@@ -280,7 +290,7 @@ namespace PMS.DataAccess.Migrations
                             CreatedDate = new DateOnly(1, 1, 1),
                             CreatedTime = new TimeOnly(0, 0, 0),
                             Description = "Garden hand tool",
-                            Guid = new Guid("cfceb59a-45e2-4540-8f2c-c968df37cfae"),
+                            Guid = new Guid("50748637-4057-42c9-938a-eca5a5f1b2ab"),
                             Name = "Hand Trowel",
                             OrderId = 1,
                             ProductId = 4,
@@ -295,7 +305,7 @@ namespace PMS.DataAccess.Migrations
                             CreatedDate = new DateOnly(1, 1, 1),
                             CreatedTime = new TimeOnly(0, 0, 0),
                             Description = "Organic pesticide",
-                            Guid = new Guid("99161013-9575-4ea0-b931-92a31a67181e"),
+                            Guid = new Guid("7fdcf96e-af72-42e2-aad2-35b50f0d2e8c"),
                             Name = "Neem Oil Bottle",
                             OrderId = 2,
                             ProductId = 7,
@@ -310,7 +320,7 @@ namespace PMS.DataAccess.Migrations
                             CreatedDate = new DateOnly(1, 1, 1),
                             CreatedTime = new TimeOnly(0, 0, 0),
                             Description = "Set of 3 spinach plants",
-                            Guid = new Guid("2b5135b8-0dbc-430a-a88b-7aa0cdc32c29"),
+                            Guid = new Guid("7e793437-b381-45dc-ac20-3e9bc8c46903"),
                             Name = "Spinach Plant x3",
                             OrderId = 3,
                             ProductId = 2,
@@ -325,7 +335,7 @@ namespace PMS.DataAccess.Migrations
                             CreatedDate = new DateOnly(1, 1, 1),
                             CreatedTime = new TimeOnly(0, 0, 0),
                             Description = "Sharp pruning shears",
-                            Guid = new Guid("b955b55b-5e81-490b-9b7c-33464afeb79b"),
+                            Guid = new Guid("db343ed9-41e5-4e4c-9aea-0b5e3db6cdec"),
                             Name = "Pruning Shears",
                             OrderId = 4,
                             ProductId = 5,
@@ -340,186 +350,219 @@ namespace PMS.DataAccess.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("product_id");
 
                     b.Property<int>("CategoryId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("category_id");
 
-                    b.Property<DateOnly>("CreatedDate")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("date")
+                        .HasColumnName("created_date");
 
-                    b.Property<TimeOnly>("CreatedTime")
-                        .HasColumnType("time");
+                    b.Property<TimeSpan>("CreatedTime")
+                        .HasColumnType("time")
+                        .HasColumnName("created_time");
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(500)
+                        .HasColumnType("varchar(500)")
+                        .HasColumnName("description");
 
                     b.Property<Guid>("Guid")
-                        .HasColumnType("char(36)");
+                        .HasColumnType("char(36)")
+                        .HasColumnName("guid");
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar(300)")
+                        .HasColumnName("image_url");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("product_name");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)")
+                        .HasColumnName("price");
 
                     b.Property<int>("Quantity")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("quantity");
 
                     b.Property<string>("Status")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)")
+                        .HasColumnName("status");
 
-                    b.Property<DateOnly>("UpdatedDate")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("date")
+                        .HasColumnName("updated_date");
 
-                    b.Property<TimeOnly>("UpdatedTime")
-                        .HasColumnType("time");
+                    b.Property<TimeSpan>("UpdatedTime")
+                        .HasColumnType("time")
+                        .HasColumnName("updated_time");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.HasIndex("Name");
+
+                    b.HasIndex("Status");
+
+                    b.ToTable("products", (string)null);
 
                     b.HasData(
                         new
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9832)),
+                            CreatedDate = new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedTime = new TimeSpan(600729209057),
                             Description = "High-yield tomato seeds suitable for home and farm use.",
-                            Guid = new Guid("27a93a37-439c-408c-bb2b-bccf2092688f"),
+                            Guid = new Guid("f97d4794-f93a-4d58-88da-b07e4f3ff1c1"),
                             ImageUrl = "images/products/tomato_seeds.jpg",
                             Name = "Tomato Seeds",
+                            Price = 0m,
                             Quantity = 3,
                             Status = "Active",
-                            UpdatedDate = new DateOnly(1, 1, 1),
-                            UpdatedTime = new TimeOnly(0, 0, 0)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new TimeSpan(0, 0, 0, 0, 0)
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 1,
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9840)),
+                            CreatedDate = new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedTime = new TimeSpan(600729209066),
                             Description = "Nutritious leafy vegetable ready for home garden transplant.",
-                            Guid = new Guid("9bc80bb1-9d10-450c-8ad7-0201e0b93008"),
+                            Guid = new Guid("196b1c7a-f541-4618-a507-4991bfa27a97"),
                             ImageUrl = "images/products/spinach_plant.jpg",
                             Name = "Spinach Plant",
+                            Price = 0m,
                             Quantity = 5,
                             Status = "Active",
-                            UpdatedDate = new DateOnly(1, 1, 1),
-                            UpdatedTime = new TimeOnly(0, 0, 0)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new TimeSpan(0, 0, 0, 0, 0)
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 1,
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9841)),
+                            CreatedDate = new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedTime = new TimeSpan(600729209068),
                             Description = "Spicy chili seeds ideal for warm climates.",
-                            Guid = new Guid("43c5667b-e99f-49a6-a0c5-7c0be92e84b1"),
+                            Guid = new Guid("c78f1ebe-9a59-4179-a21d-1d03e4ca3d89"),
                             ImageUrl = "images/products/chili_seeds.jpg",
                             Name = "Chili Seeds",
+                            Price = 0m,
                             Quantity = 2,
                             Status = "Active",
-                            UpdatedDate = new DateOnly(1, 1, 1),
-                            UpdatedTime = new TimeOnly(0, 0, 0)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new TimeSpan(0, 0, 0, 0, 0)
                         },
                         new
                         {
                             Id = 4,
                             CategoryId = 2,
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9843)),
+                            CreatedDate = new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedTime = new TimeSpan(600729209070),
                             Description = "Durable tool for digging and planting small plants.",
-                            Guid = new Guid("ac283f78-0126-4ef6-aa4e-3a1edb379677"),
+                            Guid = new Guid("17406890-dcce-4908-bfb7-b887ef1dffd6"),
                             ImageUrl = "images/products/hand_trowel.jpg",
                             Name = "Hand Trowel",
+                            Price = 0m,
                             Quantity = 7,
                             Status = "Active",
-                            UpdatedDate = new DateOnly(1, 1, 1),
-                            UpdatedTime = new TimeOnly(0, 0, 0)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new TimeSpan(0, 0, 0, 0, 0)
                         },
                         new
                         {
                             Id = 5,
                             CategoryId = 2,
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9858)),
+                            CreatedDate = new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedTime = new TimeSpan(600729209084),
                             Description = "Sharp blade tool for trimming plants and bushes.",
-                            Guid = new Guid("418be461-0180-4358-8554-50d0faf51531"),
+                            Guid = new Guid("22b2af02-cb91-4a0a-b2ed-8a4a7b45ad2f"),
                             ImageUrl = "images/products/pruning_shears.jpg",
                             Name = "Pruning Shears",
+                            Price = 0m,
                             Quantity = 10,
                             Status = "Active",
-                            UpdatedDate = new DateOnly(1, 1, 1),
-                            UpdatedTime = new TimeOnly(0, 0, 0)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new TimeSpan(0, 0, 0, 0, 0)
                         },
                         new
                         {
                             Id = 6,
                             CategoryId = 2,
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9860)),
+                            CreatedDate = new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedTime = new TimeSpan(600729209087),
                             Description = "Lightweight watering can with long spout for even watering.",
-                            Guid = new Guid("d65525fd-afd3-42b6-8b82-bbac4c22a9b9"),
+                            Guid = new Guid("31d12078-72d1-4788-b4aa-a93d35d0ada9"),
                             ImageUrl = "images/products/watering_can.jpg",
                             Name = "Watering Can",
+                            Price = 0m,
                             Quantity = 12,
                             Status = "Active",
-                            UpdatedDate = new DateOnly(1, 1, 1),
-                            UpdatedTime = new TimeOnly(0, 0, 0)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new TimeSpan(0, 0, 0, 0, 0)
                         },
                         new
                         {
                             Id = 7,
                             CategoryId = 3,
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9862)),
+                            CreatedDate = new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedTime = new TimeSpan(600729209089),
                             Description = "Organic pesticide for controlling aphids and mealybugs.",
-                            Guid = new Guid("795fdbc0-a971-461d-93dc-af4a7850eca1"),
+                            Guid = new Guid("33f8cd70-6b25-49d7-a085-1ac0d0e759bb"),
                             ImageUrl = "images/products/neem_oil.jpg",
                             Name = "Pesticide - Neem Oil",
+                            Price = 0m,
                             Quantity = 8,
                             Status = "Active",
-                            UpdatedDate = new DateOnly(1, 1, 1),
-                            UpdatedTime = new TimeOnly(0, 0, 0)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new TimeSpan(0, 0, 0, 0, 0)
                         },
                         new
                         {
                             Id = 8,
                             CategoryId = 3,
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9864)),
+                            CreatedDate = new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedTime = new TimeSpan(600729209091),
                             Description = "Fast-acting insecticide for outdoor crops.",
-                            Guid = new Guid("999e3527-4c1c-40ad-bd13-acc18658edfc"),
+                            Guid = new Guid("44849150-f135-4976-80ba-cb57740c4506"),
                             ImageUrl = "images/products/cypermethrin.jpg",
                             Name = "Insecticide - Cypermethrin",
+                            Price = 0m,
                             Quantity = 10,
                             Status = "Active",
-                            UpdatedDate = new DateOnly(1, 1, 1),
-                            UpdatedTime = new TimeOnly(0, 0, 0)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new TimeSpan(0, 0, 0, 0, 0)
                         },
                         new
                         {
                             Id = 9,
                             CategoryId = 3,
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9866)),
+                            CreatedDate = new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedTime = new TimeSpan(600729209093),
                             Description = "Balanced fertilizer to promote plant growth.",
-                            Guid = new Guid("a79c5564-4081-423d-8981-d46520a041ab"),
+                            Guid = new Guid("eb747c24-0c46-439b-b73f-7b95c3b213cf"),
                             ImageUrl = "images/products/npk_fertilizer.jpg",
                             Name = "Fertilizer - NPK 20:20:20",
+                            Price = 0m,
                             Quantity = 15,
                             Status = "Active",
-                            UpdatedDate = new DateOnly(1, 1, 1),
-                            UpdatedTime = new TimeOnly(0, 0, 0)
+                            UpdatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UpdatedTime = new TimeSpan(0, 0, 0, 0, 0)
                         });
                 });
 
@@ -574,8 +617,8 @@ namespace PMS.DataAccess.Migrations
                         {
                             Id = 1,
                             Address = "Butwal",
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9901)),
+                            CreatedDate = new DateOnly(2025, 5, 15),
+                            CreatedTime = new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9133)),
                             Email = "admin@admin.com",
                             FirstName = "Ram",
                             LastName = "Thapa",
@@ -588,8 +631,8 @@ namespace PMS.DataAccess.Migrations
                         {
                             Id = 2,
                             Address = "Lalitpur",
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9903)),
+                            CreatedDate = new DateOnly(2025, 5, 15),
+                            CreatedTime = new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9135)),
                             Email = "sita@example.com",
                             FirstName = "Sita",
                             LastName = "Maharjan",
@@ -602,8 +645,8 @@ namespace PMS.DataAccess.Migrations
                         {
                             Id = 3,
                             Address = "Pokhara",
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9905)),
+                            CreatedDate = new DateOnly(2025, 5, 15),
+                            CreatedTime = new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9137)),
                             Email = "kiran@example.com",
                             FirstName = "Kiran",
                             LastName = "Gurung",
@@ -616,8 +659,8 @@ namespace PMS.DataAccess.Migrations
                         {
                             Id = 4,
                             Address = "Kathmandu",
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9906)),
+                            CreatedDate = new DateOnly(2025, 5, 15),
+                            CreatedTime = new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9138)),
                             Email = "anil@example.com",
                             FirstName = "Anil",
                             LastName = "Shrestha",
@@ -630,8 +673,8 @@ namespace PMS.DataAccess.Migrations
                         {
                             Id = 5,
                             Address = "Biratnagar",
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9907)),
+                            CreatedDate = new DateOnly(2025, 5, 15),
+                            CreatedTime = new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9140)),
                             Email = "meena@example.com",
                             FirstName = "Meena",
                             LastName = "Tharu",
@@ -644,8 +687,8 @@ namespace PMS.DataAccess.Migrations
                         {
                             Id = 6,
                             Address = "Dharan",
-                            CreatedDate = new DateOnly(2025, 5, 14),
-                            CreatedTime = new TimeOnly(8, 43, 42, 78).Add(TimeSpan.FromTicks(9909)),
+                            CreatedDate = new DateOnly(2025, 5, 15),
+                            CreatedTime = new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9142)),
                             Email = "hari@example.com",
                             FirstName = "Hari",
                             LastName = "Rai",
@@ -697,12 +740,17 @@ namespace PMS.DataAccess.Migrations
             modelBuilder.Entity("PMS.Core.ProductFeatures.ProductEntity", b =>
                 {
                     b.HasOne("PMS.Core.CategoryFeatures.CategoryEntity", "Category")
-                        .WithMany()
+                        .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("PMS.Core.CategoryFeatures.CategoryEntity", b =>
+                {
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("PMS.Core.OderFeatures.OrderEntity", b =>

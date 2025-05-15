@@ -18,29 +18,34 @@ namespace PMS.DataAccess.Repository
             _appDbContext= appDbContext;
         }
 
-        public Task Create(CategoryCreateDto dto)
+        public async Task Create(CategoryEntity entity)
         {
-            throw new NotImplementedException();
+             _appDbContext.Categories.Add(entity);
+            await _appDbContext.SaveChangesAsync(); 
         }
 
-        public Task Delete(int id)
+        public async Task Delete(CategoryEntity entity)
         {
-            throw new NotImplementedException();
+             _appDbContext.Categories.Remove(entity);
+            await _appDbContext.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<CategoryEntity>> GetAllCategories()
         {
-           return await _appDbContext.Categories.ToListAsync();
+            return await _appDbContext.Categories.Include(c=>c.Products).ToListAsync();
+
         }
 
-        public Task<CategoryEntity> GetCategoryById(int id)
+        public async Task<CategoryEntity> GetCategoryById(int id)
         {
-            throw new NotImplementedException();
+            return await _appDbContext.Categories.FindAsync(id);
+             
         }
 
-        public Task Update(CategoryUpdateDto dto)
+        public async Task Update(CategoryEntity entity)
         {
-            throw new NotImplementedException();
+            _appDbContext.Categories.Update(entity);
+            await _appDbContext.SaveChangesAsync();
         }
     }
 }

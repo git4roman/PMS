@@ -10,7 +10,7 @@ namespace PMS.Core.CategoryFeatures
     {
         public CategoryUpdateDto(int id,string name,
                         DateOnly createdDate, DateOnly updatedDate,
-                        TimeOnly createdTime, TimeOnly updatedTime): base(name, createdDate, updatedDate, createdTime, updatedTime) 
+                        TimeOnly createdTime, TimeOnly updatedTime)
         {
             Id = id;   
         }
