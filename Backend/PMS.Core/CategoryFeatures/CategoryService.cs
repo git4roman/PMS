@@ -28,7 +28,6 @@ namespace PMS.Core.CategoryFeatures
         }
         public async Task UpdateCategory(int id,CategoryEntity category, CategoryUpdateDto dto)
         {
-            //var entity = new CategoryEntity(dto.Name, dto.Description, dto.ImageUrl);
             category.Name = dto.Name;
             category.Description = dto.Description;
             category.ImageUrl = dto.ImageUrl;

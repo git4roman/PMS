@@ -8,11 +8,9 @@ namespace PMS.Core.CategoryFeatures
 {
     public class CategoryUpdateDto:CategoryCreateDto
     {
-        public CategoryUpdateDto(int id,string name,
-                        DateOnly createdDate, DateOnly updatedDate,
-                        TimeOnly createdTime, TimeOnly updatedTime)
+        public CategoryUpdateDto(int id)
         {
-            Id = id;   
+            Id = id;            
         }
 
         public int Id { get; set; }        
