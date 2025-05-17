@@ -6,7 +6,7 @@ namespace PMS.Web.Controllers
     {
         public IActionResult Index()
         {
-            return Content("Hello Wolrd") ;
+            return Content("Hello world") ;
         }
     }
 }

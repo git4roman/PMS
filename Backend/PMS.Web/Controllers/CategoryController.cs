@@ -16,7 +16,7 @@ namespace PMS.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetCategory()
+        public async Task<IActionResult> GetCategories()
         {
             var list = await _categoryService.GetAllCategories();
             return Ok(list);
@@ -24,14 +24,14 @@ namespace PMS.Web.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetCategory(int id)
+        public async Task<IActionResult> GetCategories(int id)
         {
             var category = await _categoryService.GetCategoryById(id);
             return Ok(category);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CategoryCreateDto dto)
+        public async Task<IActionResult> CreateCategory([FromBody] CategoryCreateDto dto)
         {
             if(!ModelState.IsValid)
             {
@@ -42,7 +42,7 @@ namespace PMS.Web.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] CategoryUpdateDto dto)
+        public async Task<IActionResult> UpdateCategory(int id, [FromBody] CategoryUpdateDto dto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
@@ -51,12 +51,12 @@ namespace PMS.Web.Controllers
             {
                 return NotFound("Category Not Found");
             }
-            await _categoryService.UpdateCategory(id, category,dto);
+            await _categoryService.UpdateCategory(id,category,dto);
             return Ok("Message: Updated");
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteCategory(int id)
         {
             var category = await _categoryService.GetCategoryById(id);
             if (category == null)

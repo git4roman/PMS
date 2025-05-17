@@ -13,8 +13,7 @@ namespace PMS.Core.ProductFeatures
         protected ProductEntity()
         {
         }
-
-        public ProductEntity(string Name, string Description, string ImageUrl, int CategoryId, int Quantity)
+        public ProductEntity(string Name, string Description, string ImageUrl, int CategoryId, int Quantity,int Price)
         {
             Guid = Guid.NewGuid();
             this.Name = Name;
@@ -25,14 +24,13 @@ namespace PMS.Core.ProductFeatures
             CreatedTime = TimeOnly.FromDateTime(DateTime.Now);
             Status = ProductStatusEnum.Active;
             this.Quantity = Quantity;
+            this.Price = Price;
         }
-
-        public ProductEntity(int Id,string Name, string Description, string ImageUrl, int CategoryId, int Quantity): this(Name,Description,ImageUrl,CategoryId,Quantity)
+        public ProductEntity(int Id,string Name, string Description, string ImageUrl, int CategoryId, int Quantity,int Price): this(Name,Description,ImageUrl,CategoryId,Quantity,Price)
         {
             this.Id =Id;
         }
-
-        public int Id { get;protected set; }
+        public int Id { get; protected set; }
         public Guid Guid { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -42,10 +40,10 @@ namespace PMS.Core.ProductFeatures
         public int CategoryId { get; set; }
         [JsonIgnore]
         public virtual CategoryEntity Category { get; set; }
-        public DateOnly CreatedDate { get; set; }
-        public DateOnly UpdatedDate { get; set; }
-        public TimeOnly UpdatedTime { get; set; }
-        public TimeOnly CreatedTime { get; set; }
+        public DateOnly CreatedDate { get; private set; }
+        public DateOnly UpdatedDate { get; private set; }
+        public TimeOnly UpdatedTime { get; private set; }
+        public TimeOnly CreatedTime { get; private set; }
 
         public string Status { get; set; }
 
@@ -60,7 +58,7 @@ namespace PMS.Core.ProductFeatures
         public bool IsActive() {  
             return Status == ProductStatusEnum.Active;
         }
-        private void UpdateTimestamp()
+        public void UpdateTimestamp()
         {
             UpdatedDate = DateOnly.FromDateTime(DateTime.Now);
             UpdatedTime = TimeOnly.FromDateTime(DateTime.Now);

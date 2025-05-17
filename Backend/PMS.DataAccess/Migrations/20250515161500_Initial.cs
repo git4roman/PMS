@@ -193,11 +193,11 @@ namespace PMS.DataAccess.Migrations
                 columns: new[] { "Id", "CreatedDate", "CreatedTime", "CustomerId", "DelieveryAddress", "Description", "Guid", "OrderStatus" },
                 values: new object[,]
                 {
-                    { 1, new DateOnly(2025, 5, 15), new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9178)), 101, "123 Maple Street, Springfield", "Grocery order for weekly supplies", new Guid("fb3eb877-677b-43ae-b047-dc70731036d8"), "Pending" },
-                    { 2, new DateOnly(2025, 5, 15), new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9181)), 102, "456 Oak Avenue, Rivertown", "Electronics purchase", new Guid("49e0eea5-e1ed-4d37-aa9c-77e8fd783f1f"), "Pending" },
-                    { 3, new DateOnly(2025, 5, 15), new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9183)), 103, "789 Pine Road, Hillview", "Clothing order for summer collection", new Guid("229a5c6b-f928-4a4d-ae51-289901553959"), "Pending" },
-                    { 4, new DateOnly(2025, 5, 15), new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9188)), 104, "321 Cedar Lane, Lakeside", "Furniture delivery", new Guid("7bef04f2-634f-4627-9600-5dc118bdb03f"), "Pending" },
-                    { 5, new DateOnly(2025, 5, 15), new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9190)), 105, "654 Birch Street, Sunnyvale", "Cancelled book order", new Guid("3494126d-cd38-4a8a-83b7-17b35d013f1c"), "Pending" }
+                    { 1, new DateOnly(2025, 5, 15), new TimeOnly(21, 59, 58, 932).Add(TimeSpan.FromTicks(6673)), 101, "123 Maple Street, Springfield", "Grocery order for weekly supplies", new Guid("0a58b9d9-c533-4230-b072-1e4bd998bf07"), "Pending" },
+                    { 2, new DateOnly(2025, 5, 15), new TimeOnly(21, 59, 58, 932).Add(TimeSpan.FromTicks(6676)), 102, "456 Oak Avenue, Rivertown", "Electronics purchase", new Guid("532edb53-8a9c-49e8-aa17-8b55157a4bf7"), "Pending" },
+                    { 3, new DateOnly(2025, 5, 15), new TimeOnly(21, 59, 58, 932).Add(TimeSpan.FromTicks(6677)), 103, "789 Pine Road, Hillview", "Clothing order for summer collection", new Guid("2eef5ecf-84d7-4831-82ee-a3bfba735e3e"), "Pending" },
+                    { 4, new DateOnly(2025, 5, 15), new TimeOnly(21, 59, 58, 932).Add(TimeSpan.FromTicks(6679)), 104, "321 Cedar Lane, Lakeside", "Furniture delivery", new Guid("773c2d0e-1847-48ae-8fa3-3219af6e10f5"), "Pending" },
+                    { 5, new DateOnly(2025, 5, 15), new TimeOnly(21, 59, 58, 932).Add(TimeSpan.FromTicks(6683)), 105, "654 Birch Street, Sunnyvale", "Cancelled book order", new Guid("4fbfb74f-5438-42f0-8bad-08236aa6edac"), "Pending" }
                 });
 
             migrationBuilder.InsertData(
@@ -205,12 +205,12 @@ namespace PMS.DataAccess.Migrations
                 columns: new[] { "Id", "Address", "CreatedDate", "CreatedTime", "Email", "FirstName", "LastName", "MiddleName", "PasswordHash", "PhoneNumber", "Status" },
                 values: new object[,]
                 {
-                    { 1, "Butwal", new DateOnly(2025, 5, 15), new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9133)), "admin@admin.com", "Ram", "Thapa", "Bahadur", "hashedPassword1", "9800000000", "InActive" },
-                    { 2, "Lalitpur", new DateOnly(2025, 5, 15), new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9135)), "sita@example.com", "Sita", "Maharjan", "", "hashedPassword2", "9800000001", "InActive" },
-                    { 3, "Pokhara", new DateOnly(2025, 5, 15), new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9137)), "kiran@example.com", "Kiran", "Gurung", "Kumar", "hashedPassword3", "9800000002", "InActive" },
-                    { 4, "Kathmandu", new DateOnly(2025, 5, 15), new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9138)), "anil@example.com", "Anil", "Shrestha", "", "hashedPassword4", "9800000003", "InActive" },
-                    { 5, "Biratnagar", new DateOnly(2025, 5, 15), new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9140)), "meena@example.com", "Meena", "Tharu", "Devi", "hashedPassword5", "9800000004", "InActive" },
-                    { 6, "Dharan", new DateOnly(2025, 5, 15), new TimeOnly(16, 41, 12, 920).Add(TimeSpan.FromTicks(9142)), "hari@example.com", "Hari", "Rai", "", "hashedPassword6", "9800000005", "InActive" }
+                    { 1, "Butwal", new DateOnly(2025, 5, 15), new TimeOnly(21, 59, 58, 932).Add(TimeSpan.FromTicks(6639)), "admin@admin.com", "Ram", "Thapa", "Bahadur", "hashedPassword1", "9800000000", "InActive" },
+                    { 2, "Lalitpur", new DateOnly(2025, 5, 15), new TimeOnly(21, 59, 58, 932).Add(TimeSpan.FromTicks(6641)), "sita@example.com", "Sita", "Maharjan", "", "hashedPassword2", "9800000001", "InActive" },
+                    { 3, "Pokhara", new DateOnly(2025, 5, 15), new TimeOnly(21, 59, 58, 932).Add(TimeSpan.FromTicks(6642)), "kiran@example.com", "Kiran", "Gurung", "Kumar", "hashedPassword3", "9800000002", "InActive" },
+                    { 4, "Kathmandu", new DateOnly(2025, 5, 15), new TimeOnly(21, 59, 58, 932).Add(TimeSpan.FromTicks(6643)), "anil@example.com", "Anil", "Shrestha", "", "hashedPassword4", "9800000003", "InActive" },
+                    { 5, "Biratnagar", new DateOnly(2025, 5, 15), new TimeOnly(21, 59, 58, 932).Add(TimeSpan.FromTicks(6645)), "meena@example.com", "Meena", "Tharu", "Devi", "hashedPassword5", "9800000004", "InActive" },
+                    { 6, "Dharan", new DateOnly(2025, 5, 15), new TimeOnly(21, 59, 58, 932).Add(TimeSpan.FromTicks(6646)), "hari@example.com", "Hari", "Rai", "", "hashedPassword6", "9800000005", "InActive" }
                 });
 
             migrationBuilder.InsertData(
@@ -218,9 +218,9 @@ namespace PMS.DataAccess.Migrations
                 columns: new[] { "category_id", "description", "guid", "image_url", "category_name" },
                 values: new object[,]
                 {
-                    { 1, "Seeds and plants for agriculture and gardening.", new Guid("e1168fb4-6a6e-4fe8-9b0e-65282fbfb341"), "images/categories/crops.jpg", "Crops" },
-                    { 2, "Essential tools for planting, digging, and maintaining your garden.", new Guid("a4f255b0-2315-4dee-b4b8-4dacf86457fe"), "images/categories/tools.jpg", "Tools" },
-                    { 3, "Fertilizers, pesticides, and insecticides for healthy plant growth.", new Guid("af7963ee-4124-4e93-b85e-b42b97750ded"), "images/categories/chemicals.jpg", "Chemicals" }
+                    { 1, "Seeds and plants for agriculture and gardening.", new Guid("8316e7bd-e19b-4139-9e73-a21c08c18bfa"), "images/categories/crops.jpg", "Crops" },
+                    { 2, "Essential tools for planting, digging, and maintaining your garden.", new Guid("6827cfa0-808d-4021-8eab-6dceb4a95131"), "images/categories/tools.jpg", "Tools" },
+                    { 3, "Fertilizers, pesticides, and insecticides for healthy plant growth.", new Guid("c0ae1c90-6064-4f06-ae24-691a35ce1a8b"), "images/categories/chemicals.jpg", "Chemicals" }
                 });
 
             migrationBuilder.InsertData(
@@ -228,15 +228,15 @@ namespace PMS.DataAccess.Migrations
                 columns: new[] { "product_id", "category_id", "created_date", "created_time", "description", "guid", "image_url", "product_name", "price", "quantity", "status", "updated_date", "updated_time" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(600729209057), "High-yield tomato seeds suitable for home and farm use.", new Guid("f97d4794-f93a-4d58-88da-b07e4f3ff1c1"), "images/products/tomato_seeds.jpg", "Tomato Seeds", 0m, 3, "Active", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0) },
-                    { 2, 1, new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(600729209066), "Nutritious leafy vegetable ready for home garden transplant.", new Guid("196b1c7a-f541-4618-a507-4991bfa27a97"), "images/products/spinach_plant.jpg", "Spinach Plant", 0m, 5, "Active", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0) },
-                    { 3, 1, new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(600729209068), "Spicy chili seeds ideal for warm climates.", new Guid("c78f1ebe-9a59-4179-a21d-1d03e4ca3d89"), "images/products/chili_seeds.jpg", "Chili Seeds", 0m, 2, "Active", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0) },
-                    { 4, 2, new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(600729209070), "Durable tool for digging and planting small plants.", new Guid("17406890-dcce-4908-bfb7-b887ef1dffd6"), "images/products/hand_trowel.jpg", "Hand Trowel", 0m, 7, "Active", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0) },
-                    { 5, 2, new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(600729209084), "Sharp blade tool for trimming plants and bushes.", new Guid("22b2af02-cb91-4a0a-b2ed-8a4a7b45ad2f"), "images/products/pruning_shears.jpg", "Pruning Shears", 0m, 10, "Active", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0) },
-                    { 6, 2, new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(600729209087), "Lightweight watering can with long spout for even watering.", new Guid("31d12078-72d1-4788-b4aa-a93d35d0ada9"), "images/products/watering_can.jpg", "Watering Can", 0m, 12, "Active", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0) },
-                    { 7, 3, new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(600729209089), "Organic pesticide for controlling aphids and mealybugs.", new Guid("33f8cd70-6b25-49d7-a085-1ac0d0e759bb"), "images/products/neem_oil.jpg", "Pesticide - Neem Oil", 0m, 8, "Active", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0) },
-                    { 8, 3, new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(600729209091), "Fast-acting insecticide for outdoor crops.", new Guid("44849150-f135-4976-80ba-cb57740c4506"), "images/products/cypermethrin.jpg", "Insecticide - Cypermethrin", 0m, 10, "Active", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0) },
-                    { 9, 3, new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(600729209093), "Balanced fertilizer to promote plant growth.", new Guid("eb747c24-0c46-439b-b73f-7b95c3b213cf"), "images/products/npk_fertilizer.jpg", "Fertilizer - NPK 20:20:20", 0m, 15, "Active", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0) }
+                    { 1, 1, new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(791989326582), "High-yield tomato seeds suitable for home and farm use.", new Guid("d7347304-3d48-4afb-a5c9-c283cc945f69"), "images/products/tomato_seeds.jpg", "Tomato Seeds", 299m, 3, "Active", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0) },
+                    { 2, 1, new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(791989326590), "Nutritious leafy vegetable ready for home garden transplant.", new Guid("56c70192-dfcc-4fdb-ad21-c7ebafe74137"), "images/products/spinach_plant.jpg", "Spinach Plant", 499m, 5, "Active", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0) },
+                    { 3, 1, new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(791989326592), "Spicy chili seeds ideal for warm climates.", new Guid("41e4172b-8c92-4010-9230-e032c656bef5"), "images/products/chili_seeds.jpg", "Chili Seeds", 349m, 2, "Active", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0) },
+                    { 4, 2, new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(791989326594), "Durable tool for digging and planting small plants.", new Guid("2408f3bf-b4cc-4701-9600-da6f47d121c4"), "images/products/hand_trowel.jpg", "Hand Trowel", 999m, 7, "Active", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0) },
+                    { 5, 2, new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(791989326595), "Sharp blade tool for trimming plants and bushes.", new Guid("6e3807cf-b043-4df2-bdad-e2b579a9cb24"), "images/products/pruning_shears.jpg", "Pruning Shears", 1499m, 10, "Active", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0) },
+                    { 6, 2, new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(791989326599), "Lightweight watering can with long spout for even watering.", new Guid("4c489f67-07e1-45d2-a16c-50891866dd1b"), "images/products/watering_can.jpg", "Watering Can", 1999m, 12, "Active", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0) },
+                    { 7, 3, new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(791989326601), "Organic pesticide for controlling aphids and mealybugs.", new Guid("d9cf191c-41bd-4329-ba3b-ff86ebe75772"), "images/products/neem_oil.jpg", "Pesticide - Neem Oil", 1299m, 8, "Active", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0) },
+                    { 8, 3, new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(791989326602), "Fast-acting insecticide for outdoor crops.", new Guid("6d0c496f-3681-4c8b-b427-ab17b214a7ce"), "images/products/cypermethrin.jpg", "Insecticide - Cypermethrin", 1599m, 10, "Active", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0) },
+                    { 9, 3, new DateTime(2025, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(791989326604), "Balanced fertilizer to promote plant growth.", new Guid("6b80746d-6e83-48ab-a83d-6f2a43b8a898"), "images/products/npk_fertilizer.jpg", "Fertilizer - NPK 20:20:20", 1099m, 15, "Active", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0) }
                 });
 
             migrationBuilder.InsertData(
@@ -244,11 +244,11 @@ namespace PMS.DataAccess.Migrations
                 columns: new[] { "Id", "CreatedDate", "CreatedTime", "Description", "Guid", "Name", "OrderId", "ProductId", "Quantity", "ShippingCharge", "TotalPrice", "UnitPrice" },
                 values: new object[,]
                 {
-                    { 1, new DateOnly(1, 1, 1), new TimeOnly(0, 0, 0), "Two packets of tomato seeds", new Guid("7b65c3a9-565d-4dd2-8439-9bb656720f8a"), "Tomato Seeds x2", 1, 1, 2, 1.00m, 7.00m, 3.00m },
-                    { 2, new DateOnly(1, 1, 1), new TimeOnly(0, 0, 0), "Garden hand tool", new Guid("50748637-4057-42c9-938a-eca5a5f1b2ab"), "Hand Trowel", 1, 4, 1, 1.00m, 8.00m, 7.00m },
-                    { 3, new DateOnly(1, 1, 1), new TimeOnly(0, 0, 0), "Organic pesticide", new Guid("7fdcf96e-af72-42e2-aad2-35b50f0d2e8c"), "Neem Oil Bottle", 2, 7, 1, 1.00m, 9.00m, 8.00m },
-                    { 4, new DateOnly(1, 1, 1), new TimeOnly(0, 0, 0), "Set of 3 spinach plants", new Guid("7e793437-b381-45dc-ac20-3e9bc8c46903"), "Spinach Plant x3", 3, 2, 3, 1.00m, 16.00m, 5.00m },
-                    { 5, new DateOnly(1, 1, 1), new TimeOnly(0, 0, 0), "Sharp pruning shears", new Guid("db343ed9-41e5-4e4c-9aea-0b5e3db6cdec"), "Pruning Shears", 4, 5, 1, 1.00m, 11.00m, 10.00m }
+                    { 1, new DateOnly(1, 1, 1), new TimeOnly(0, 0, 0), "Two packets of tomato seeds", new Guid("d7179ac9-3db4-46bf-b70e-9e48d9b083c5"), "Tomato Seeds x2", 1, 1, 2, 1.00m, 7.00m, 3.00m },
+                    { 2, new DateOnly(1, 1, 1), new TimeOnly(0, 0, 0), "Garden hand tool", new Guid("04137a51-67f4-46e1-af2e-c613cbdda7ca"), "Hand Trowel", 1, 4, 1, 1.00m, 8.00m, 7.00m },
+                    { 3, new DateOnly(1, 1, 1), new TimeOnly(0, 0, 0), "Organic pesticide", new Guid("dedbe540-ddd8-40fd-91f6-356cd77eb9e6"), "Neem Oil Bottle", 2, 7, 1, 1.00m, 9.00m, 8.00m },
+                    { 4, new DateOnly(1, 1, 1), new TimeOnly(0, 0, 0), "Set of 3 spinach plants", new Guid("a5659af8-0086-4793-95e7-6868fbf3c9fe"), "Spinach Plant x3", 3, 2, 3, 1.00m, 16.00m, 5.00m },
+                    { 5, new DateOnly(1, 1, 1), new TimeOnly(0, 0, 0), "Sharp pruning shears", new Guid("cabf44b7-a7bb-49d5-8b21-f1596773d679"), "Pruning Shears", 4, 5, 1, 1.00m, 11.00m, 10.00m }
                 });
 
             migrationBuilder.CreateIndex(
